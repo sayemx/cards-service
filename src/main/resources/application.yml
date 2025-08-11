@@ -5,7 +5,11 @@ logging:
  
 server:
   port: 9000
+  
 spring:
+  profiles:
+    active:
+      - prod
   application:
     name: cards-service
   datasource:
@@ -23,6 +27,20 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+
+build:
+  version: 3.0
+
+cards:
+  message: "Welcome to Cards App with default profile"
+  contactDetails:
+    name: Default Profile
+    email: default@example.com
+  onCallSupport:
+   - 555-555-555
+   - 888-888-888
+
 
 
 

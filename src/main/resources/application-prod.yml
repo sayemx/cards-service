@@ -1,0 +1,19 @@
+ 
+spring:
+  config:
+    active:
+      on-profile: "prod"
+
+
+build:
+  version: 1.0
+
+cards:
+  message: "Welcome to Cards app with PROD Profile"
+  contactDetails:
+    name: Prod Profile
+    email: prod@example.com
+  onCallSupport:
+   - 555-555-555
+   - 888-888-888
+
