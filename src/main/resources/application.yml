@@ -10,8 +10,10 @@ spring:
   profiles:
     active:
       - prod
+  config:
+    import: "optional:configserver:http://localhost:8071/"    
   application:
-    name: cards-service
+    name: cards
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -28,19 +30,29 @@ spring:
       ddl-auto: update
     show-sql: true
 
-
-build:
-  version: 3.0
-
-cards:
-  message: "Welcome to Cards App with default profile"
-  contactDetails:
-    name: Default Profile
-    email: default@example.com
-  onCallSupport:
-   - 555-555-555
-   - 888-888-888
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 
 
+#build:
+#  version: 3.0
+#
+#cards:
+#  message: "Welcome to Cards App with default profile"
+#  contactDetails:
+#    name: Default Profile
+#    email: default@example.com
+#  onCallSupport:
+#   - 555-555-555
+#   - 888-888-888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 
