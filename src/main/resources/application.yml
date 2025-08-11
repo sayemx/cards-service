@@ -37,17 +37,17 @@ spring:
     password: "guest"
 
 
-#build:
-#  version: 3.0
-#
-#cards:
-#  message: "Welcome to Cards App with default profile"
-#  contactDetails:
-#    name: Default Profile
-#    email: default@example.com
-#  onCallSupport:
-#   - 555-555-555
-#   - 888-888-888
+build:
+  version: 3.0
+
+cards:
+  message: "Welcome to Cards App with default profile"
+  contactDetails:
+    name: Default Profile
+    email: default@example.com
+  onCallSupport:
+   - 555-555-555
+   - 888-888-888
 
 management:
   endpoints:
