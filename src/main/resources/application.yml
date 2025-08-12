@@ -15,7 +15,7 @@ spring:
   application:
     name: cards
   datasource:
-    url: jdbc:mysql://localhost:3308/carddb
+    url: jdbc:mysql://localhost:3308/cardsdb
 #    driverClassName: org.h2.Driver
     username: root
     password: root
