@@ -116,7 +116,11 @@ public class CardsController {
                                                                String mobileNumber) {
     	log.debug("Sayem correlation ID found : {}", correlationId);
     	
+    	log.debug("Fetching Cards Data");
+    	
     	CardsDto cardsDto = iCardsService.fetchCard(mobileNumber);
+    	
+    	log.debug("Fetching Card data end");
         return ResponseEntity.status(HttpStatus.OK).body(cardsDto);
     }
 

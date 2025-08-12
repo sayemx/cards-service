@@ -2,6 +2,7 @@
 logging:
   pattern:
     console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){yellow} %clr(%-5level){blue} %clr([%thread]){magenta} %clr(%logger{36}){cyan} - %msg%n"
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
  
 server:
   port: 9000
@@ -15,10 +16,10 @@ spring:
   application:
     name: cards
   datasource:
-    url: jdbc:mysql://localhost:3308/cardsdb
+    url: jdbc:mysql://localhost:3306/cardsdb
 #    driverClassName: org.h2.Driver
     username: root
-    password: root
+    password: 1234567
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
@@ -66,6 +67,9 @@ management:
       enabled: true
     liveness-state:
       enabled: true
+  metrics:
+    tags:
+      applications: ${spring.application.name}
 
 endpoints:
   shutdown:
